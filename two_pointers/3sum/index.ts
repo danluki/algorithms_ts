@@ -24,11 +24,9 @@
 // }
 function threeSum(nums: number[]): number[][] {
   nums.sort((a, b) => a - b);
-  let tripletsFirstElements = new Set();
   let res: number[][] = [];
   let triplets = new Set();
   for (let i = 0; i < nums.length - 2; i++) {
-    let triplet: number[] = [];
     let j = i + 1,
       k = nums.length - 1;
     let sum = 0;
@@ -40,7 +38,7 @@ function threeSum(nums: number[]): number[][] {
       } else if (sum < 0) {
         j++;
       } else if (i !== j && j !== k) {
-        triplet = [];
+        let triplet: number[] = [];
         triplet.push(nums[i], nums[j], nums[k]);
         let tripletStr = triplet
           .sort((a, b) => {
