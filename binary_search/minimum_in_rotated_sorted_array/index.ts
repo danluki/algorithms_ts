@@ -1,6 +1,5 @@
 function findMin(nums: number[]): number {
-
-  if(nums.length === 1) return nums[0];
+  if (nums.length === 1) return nums[0];
 
   let left = 0,
     right = nums.length - 1,
@@ -8,16 +7,14 @@ function findMin(nums: number[]): number {
 
   while (left <= right) {
     middle = (left + right) >> 1;
-    
-    if(nums[left] < nums[right]){
+
+    if (nums[left] < nums[right]) {
       return nums[left];
     }
 
-    if(nums[left] <= nums[middle]){
+    if (nums[left] <= nums[middle]) {
       left = middle + 1;
-    }
-
-    if(nums[middle] < nums[left]){
+    } else if (nums[middle] < nums[left]) {
       right = middle;
     }
   }
