@@ -1,3 +1,7 @@
+/*
+  Linked lis tcycle problem, aslo the Floyd algorithm
+*/
+
 function findDuplicate(nums: number[]): number {
   let slow = 0, fast = 0
   
